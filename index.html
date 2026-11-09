@@ -3,370 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>معهد الفتح في جامع عبدالله بن عباس</title>
      
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
 
     <style>
-                                        /* جعل الصور والفيديوهات تتكيف مع عرض الشاشة دون خروج عن الحجم */
-                                img, video {
-                                    max-width: 100%;
-                                    height: auto;
-                                }
-
-                                /* ضبط حجم العناصر الأساسية لتستغل العرض كاملاً */
-                                * {
-                                    box-sizing: border-box;
-                                }
-
-                               
-
-
-                                    /* تنسيقات خاصة بشاشات الهواتف */
-                                    @media (max-width: 768px) {
-                                        /* تحويل العناصر المتجاورة إلى عمودية بدلاً من أفية */
-                                        .container {
-                                            flex-direction: column;
-                                            width: 90%;
-                                            padding: 10px;
-                                        }
-
-                                        /* تكبير حجم الخطوط قليلاً لتكون مريحة للقراءة على الهاتف */
-                                       
-
-                                        /* جعل القائمة أو الأزرار بعرض كامل الشاشة */
-                                        .btn, .menu-item {
-                                            width: 90%;
-                                            text-align: center;
-                                            margin-bottom: 20px;
-                                        }
-                                    }
-
-
-
-
-
-
-
-        body {
-            background-color:#f3e11b82;
-            font-family: cairo;
+        /* إعدادات عامة للتجاوب وحجم الشاشة */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-size: 24px;
         }
 
+        body {
+            background-color: #f3e11b82;
+            font-family: "Cairo", sans-serif;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
 
+        /* شريط العنوان العلوي الثابت */
         .mosquetitle {
             background-color: #1e653d;
             color: #f3f028;
-            border-radius: 30px;
+            border-radius: 0 0 30px 30px;
             padding: 15px;
-            align-content: center;
             text-align: center;
-            border-bottom: 10px  #37b06c solid;
+            border-bottom: 6px #37b06c solid;
             position: sticky;
-            top: 5px;
+            top: 0;
             z-index: 9999;
-            font-size: 20px;
-
+            font-size: 18px;
         }
 
-
+        /* عنوان الإعلان الرئيسي المتجاوب */
         #TT {
-            color:#1e653d ;
-            align-content: center;
+            color: #1e653d;
             text-align: center;
-            font-size: 30px;
-            width: 1200px;
+            font-size: 22px;
+            width: 90%;
+            max-width: 1000px;
             font-weight: bold;
-            margin: auto;
+            margin: 40px auto;
+            padding: 20px;
             border-radius: 25px;
-            border: #1e653d 7px solid;
+            border: #1e653d 5px solid;
+            background-color: #fff;
             position: relative;
         }
 
-        #TT::after {
-            content: "";
-            height: 0px;
-            width: 0px;
-            position: absolute;
-            left: -80px;
-            top: 28px;
-            border-color: transparent transparent transparent #1e653d;
-            border-width: 30px;
-            border-style: solid
-        }
-        #TT::before {
-            content: "";
-            height: 0px;
-            width: 0px;
-            position: absolute;
-            right: -80px;
-            top: 28px;
-            border-color: transparent #1e653d transparent transparent;
-            border-width: 30px;
-            border-style: solid
-        }
-
-
-
-
-
+        /* نموذج التسجيل المتجاوب */
         .form {
-                background-color: #1e653d;
-                width: 670px;
-                color: #f3f028;
-                padding: 71px;
-                border-radius: 30px;
-                align-content: center;
-                text-align: center;
-                margin: auto;
-                font-size: 29px;
-                box-shadow: 3px 2px 10px 0px #37b06c
-               }
-
-
-        #3 {
-            background-color:#f3f028 ;
-            color:#1e653d ;
-        }
-        #4 {
-            background-color:#f3f028 ;
-            color:#1e653d ; 
-        }
-
-        #sss {
-            background-color:#f3f028 ;
-            color:#1e653d ; 
-            size: 50px;
+            background-color: #1e653d;
+            width: 90%;
+            max-width: 650px;
+            color: #f3f028;
+            padding: 30px 20px;
             border-radius: 30px;
-            cursor: pointer;
-
-        }
-        
-
-        
-        .cairo-<uniquifier> {
-        font-family: "Cairo", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <normal>;
-        font-style: normal;
-        font-variation-settings:
-            "slnt" 0;
-        }
-
-        .ooo {
-            width: 350px;
-            height: 100px;
-            font-size: 45px;
-            align-content: center;
             text-align: center;
             margin: auto;
+            font-size: 20px;
+            box-shadow: 3px 2px 10px 0px #37b06c;
         }
+
+        /* تنسيق صفوف الإدخال داخل النموذج لتكون مرنة ومترابطة */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            height: 45px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            outline: none;
+        }
+
+        .form-group input[type="text"]:focus {
+            border: 3px solid #f3f028;
+        }
+
+        /* تنسيق خيارات طالب جديد / قديم */
+        .yyy {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .yyy div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* زر الإرسال */
+        #sss {
+            background-color: #f3f028;
+            color: #1e653d;
+            font-size: 22px;
+            padding: 12px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #sss:hover {
+            background-color: #fff;
+        }
+
+        /* الترحيب السفلي */
+        .ooo {
+            width: 100%;
+            max-width: 350px;
+            height: 80px;
+            font-size: 30px;
+            text-align: center;
+            margin: 30px auto;
+        }
+        
         .ooo p {
             color: #1e653d;
+            font-weight: bold;
         }
 
-         #three {
-            cursor: pointer;
-
+        /* تعديلات إضافية للشاشات الصغيرة جداً */
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            #TT {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .form {
+                padding: 20px 10px;
+                font-size: 18px;
+            }
         }
-        #four {
-            cursor: pointer;
-
-        }
-
-        .pop {
-            background-color:  #1e653d;
-            padding: 10px;   
-            font-size: 30px;
-            border-radius: 35px;
-            overflow: hidden;
-            
-
-        }
-        .pop div {
-            padding-bottom: 10px;
-            padding-top: 10px;
-            text-align: center;
-            background-color:#f3f028 ;
-            width: 23.75%;
-            float: right;
-            border-radius: 25px;
-            margin-right: 1%;
-            
-        }
-        .iii {
-            position: relative;
-            left: 10px
-            
-        }
-        .ddd {
-            position: relative;
-            right: 103px 
-
-        }
-        .rtr {
-            position: relative;
-            right: 26px;  
-            outline: none;
-        }
-
-
-        .rtr:focus {
-            border: 3px solid #f3f028;
-            outline: none;
-        }
-
-
-        .trt {
-            position: relative;
-            right: 12px;
-            outline: none;
-            
-        }
-
-        .trt:focus {
-            border: 3px solid #f3f028;
-            outline: none;
-        }
-
-
-        .edd {
-            border: #1e653d 10px solid;
-            width: 100%;
-            text-align: center;
-            align-content: center;
-        }
-        .edd td,
-            th {
-            border: 2px #1e653d solid;
-            
-        }
-     
-
-        #oo:checked + label {
-            color: #1e653d;
-        }
-
-        .jjj:focus {
-            border: 3px solid #f3f028;
-            outline: none;
-        }
-
-        .five {
-            position: relative;
-            text-align: center;
-            outline: #1e653d 5px solid;
-            border-radius: 20px;
-            width: 500px;
-            margin: auto;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-            
-        }
-          .five::before {
-                content: "";
-                height: 0px;
-                width: 0;
-                position: absolute;
-                right: -78px;
-                top: -6px;
-                border-color: transparent #1e653d transparent transparent;
-                border-width: 20px;
-                border-style: solid;
-                    }
-        
-        .five .line {
-            position: absolute;
-            width: 15px;
-            height: 100%;
-            left: 0 ;
-            top: 0 ;
-            background-color: green;
-        }
-       
-      
-
-      
-
     </style> 
 </head>
 
-
-
-
 <body>
+
     <div class="mosquetitle">
         <h2>أهلاً بكم بدوحة القرآن</h2>
     </div>
-    <br>
-<br>
+
     <div id="TT">
-        <p>
-        معهدالفتح في جامع عبدالله بن عباس يعلن عن دورة تحفيظ القرآن الشتوية لكل الأعمار
-        </p>
+        <p>معهد الفتح في جامع عبدالله بن عباس يعلن عن دورة تحفيظ القرآن الشتوية لكل الأعمار</p>
     </div>
-    <br>
-    <br>
-    <br>
+
     <form>
         <div class="form">
 
-             <div>
-                <label for=text style="margin-left: 25px; ">  اسم الطالب الثلاثي</label>
-                 <input class="jjj" type="text" style="border-radius: 25px; width: 318px; height: 36px; font-size: 30px; text-align: center; " required autofocus>
+             <div class="form-group">
+                <label for="student-name">اسم الطالب الثلاثي</label>
+                <input class="jjj" id="student-name" type="text" required autofocus>
              </div>
-<br>
-             <div>
-                <label for=text style="margin-right: 45px;">  العمر</label>
-                 <input type="text" style="margin-right: 80px;  border-radius: 20px; width: 318px; height: 36px; font-size: 30px; text-align: center;" required class="rtr" >
+
+             <div class="form-group">
+                <label for="student-age">العمر</label>
+                <input type="text" id="student-age" required>
              </div>
-<br>
-             <div>
-                <label for=text" style="margin-right: 10px;">  الصف الدراسي</label>
-                 <input type="text"  style="margin-right: 30px; border-radius: 20px; width: 318px; height: 36px; font-size: 30px; text-align: center;" required class="trt">
+
+             <div class="form-group">
+                <label for="student-grade">الصف الدراسي</label>
+                <input type="text" id="student-grade" required>
              </div>
-<br>
-            <div style="display: flex; margin-right: 60px;" class="yyy">
-               <div style="margin-left: 40px;" class="iii" >
+
+             <div class="yyy">
+                <div>
                     <input id="three" type="radio" name="os">
                     <label for="three">طالب جديد</label>
                 </div>
-    <br>
-                <div class="ddd">
+                <div>
                     <input id="four" type="radio" name="os">
                     <label for="four">طالب موجود سابقاً</label>
                 </div>
-            </div>
-<br>
-                <div class="rrr">
-                    <input id="sss" type="submit" style="font-size: 25px; padding: 15px;">
-                </div>
+             </div>
+
+             <div class="rrr">
+                 <input id="sss" type="submit" value="إرسال التسجيل">
+             </div>
         </div>
-       
-
     </form>
-<br>
-<br>
-<br>
-<br>
     
-<div class="ooo">
-    <p>أهلاً وسهلاً</p>
+    <div class="ooo">
+        <p>أهلاً وسهلاً</p>
+    </div>
 
-</div>
-<br>
-<br>
-
-
-    
 </body>
-
-
-
-
 </html>
